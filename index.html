@@ -19,8 +19,8 @@
 
         .fix-e { 
             font-family: Arial, Helvetica, sans-serif !important; 
-            text-transform: lowercase !important; 
             font-weight: inherit; 
+            font-size: inherit;
             display: inline;
         }
 
@@ -40,8 +40,8 @@
 
         .hero-header-text { 
             position: absolute; 
-            top: 20px; /* БЫЛО 60px — СТАЛО 20px */
-            left: 8%; 
+            top: 5px;      /* БУЛО 20px — ТЕПЕР 5px */
+            left: 3%;      /* БУЛО 8% — ТЕПЕР 3% */
             right: 8%; 
             z-index: 10; 
         }
@@ -212,7 +212,7 @@
             <div class="white-bold">МІЖНАРОДНИЙ БІЗНЕС</div>
             <div class="gold-sub">в сфері краси та здоров'я</div>
         </div>
-        <img src="me.jpg" class="hero-image" alt="Ірина Вансович">
+        <img src="me.png" class="hero-image" alt="Ірина Вансович">
         <div class="name-plate-on-photo">
             <h2>ІРИНА ВАНСОВИЧ</h2>
             <p>Лідер німецької компанії LR</p>
@@ -223,7 +223,7 @@
         <div class="section-block fade-in">
             <h2>Про мене</h2>
             <p>Лідер німецької компанії LR. Розвиваю системний бізнес у 30+ країнах світу. Будую сильні команди та допомогаю жінкам виходити на новий рівень доходу та мислення.</p>
-            <div class=""></div>
+            <div class="gold-badge-inline">У ТОП-1 КОМАНДІ LR В УКРАЇНІ</div>
         </div>
 
         <div class="divider-dots">◆ ◆ ◆</div>
@@ -290,7 +290,7 @@
                         if (part === 'є' || part === 'Є') {
                             var span = document.createElement('span');
                             span.className = 'fix-e';
-                            span.textContent = 'є';
+                            span.textContent = part;
                             fragment.appendChild(span);
                         } else if (part) {
                             fragment.appendChild(document.createTextNode(part));
