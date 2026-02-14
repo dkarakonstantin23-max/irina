@@ -19,8 +19,8 @@
 
         .fix-e { 
             font-family: Arial, Helvetica, sans-serif !important; 
-            text-transform: lowercase !important; 
             font-weight: inherit; 
+            font-size: inherit;
             display: inline;
         }
 
@@ -268,8 +268,8 @@
             <h2>Варіанти</h2>
             <p>Обери свій формат співпраці:</p>
             <div class="variants-grid">
-                <span class="variant-item">КліЄнт</span>
-                <span class="variant-item">VIP-кліЄнт</span>
+                <span class="variant-item">Клієнт</span>
+                <span class="variant-item">VIP-клієнт</span>
                 <span class="variant-item">Партнер</span>
             </div>
         </div>
@@ -303,6 +303,7 @@
             });
         }
 
+        // ВИПРАВЛЕНА ФУНКЦІЯ - тепер зберігає регістр букви
         function fixCyrillicE(node) {
             if (node.nodeType === Node.TEXT_NODE) {
                 if (/[єЄ]/.test(node.textContent)) {
@@ -311,7 +312,7 @@
                         if (part === 'є' || part === 'Є') {
                             var span = document.createElement('span');
                             span.className = 'fix-e';
-                            span.textContent = 'є';
+                            span.textContent = part; // Зберігаємо оригінальну букву
                             fragment.appendChild(span);
                         } else if (part) {
                             fragment.appendChild(document.createTextNode(part));
